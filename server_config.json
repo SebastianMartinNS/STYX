@@ -1,0 +1,54 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8443,
+    "ssl_cert": "server.crt",
+    "ssl_key": "server.key",
+    "api_path": "/api/report",
+    "beacon_interval": 60,
+    "max_clients": 100
+  },
+  "encryption": {
+    "rsa_key_size": 2048,
+    "aes_key_size": 32,
+    "aes_iv_size": 12,
+    "aes_tag_size": 16,
+    "key_exchange_timeout": 30
+  },
+  "logging": {
+    "level": "DEBUG",
+    "file": "c2_server.log",
+    "max_size_mb": 10,
+    "backup_count": 5
+  },
+  "security": {
+    "require_client_auth": false,
+    "allowed_ciphers": [
+      "ECDHE+AESGCM",
+      "ECDHE+CHACHA20", 
+      "DHE+AESGCM",
+      "DHE+CHACHA20"
+    ],
+    "blocked_ips": [],
+    "rate_limit": {
+      "requests_per_minute": 60,
+      "beacons_per_minute": 10
+    }
+  },
+  "commands": {
+    "default_timeout": 30,
+    "max_output_size": 1048576,
+    "allowed_commands": [
+      "whoami",
+      "hostname",
+      "ipconfig",
+      "netstat",
+      "tasklist"
+    ],
+    "blocked_commands": [
+      "format",
+      "rmdir /s /q",
+      "del /f /s /q"
+    ]
+  }
+}

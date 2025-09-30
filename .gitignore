@@ -1,0 +1,228 @@
+# 🔒 Styx C2 Framework - Git Ignore Rules
+# Official Repository: https://github.com/SebastianMartinNS/STYX
+#
+# WARNING: This project handles sensitive cryptographic materials.
+# NEVER commit private keys, certificates, or operational secrets to version control.
+# Use this .gitignore to prevent accidental exposure of sensitive assets.
+
+###############################################################################
+# 🚨 CRITICAL - CRYPTOGRAPHIC MATERIALS (NEVER COMMIT THESE)
+###############################################################################
+
+# Private RSA keys and sensitive key material
+*.pem
+*.key
+*.priv
+*private*
+*secret*
+
+# SSL/TLS certificates and certificate authority files
+*.crt
+*.cer
+*.der
+ca.key
+ca.crt
+server.crt
+server.key
+
+# Auto-generated cryptographic files
+server_private_key.pem
+server_public_key.der
+server_public_key.h
+
+# Key directories (contents should never be tracked)
+keys/
+certs/
+generated_keys/
+secret_files/
+
+###############################################################################
+# 🔐 SENSITIVE OPERATIONAL FILES
+###############################################################################
+
+# Configuration files with sensitive data
+.env
+.env.local
+.env.production
+.env.development
+config.local.json
+settings.local.json
+secrets.json
+
+# Database and state files (may contain operational data)
+*.db
+*.sqlite
+*.sqlite3
+state.json
+session_data.json
+
+###############################################################################
+# 📊 LOG FILES AND DEBUG OUTPUT
+###############################################################################
+
+# Server and client log files
+*.log
+c2_server.log
+c2client_debug.log
+debug.log
+error.log
+access.log
+
+# Audit and monitoring logs
+audit.log
+security.log
+monitoring.log
+
+###############################################################################
+# 🛠️ BUILD ARTIFACTS AND COMPILED BINARIES
+###############################################################################
+
+# Compiled executables and binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.bin
+
+# Build directories
+build/
+dist/
+bin/
+obj/
+
+# Visual Studio build artifacts
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.opensdf
+*.sdf
+
+###############################################################################
+# 🐍 PYTHON SPECIFIC IGNORES
+###############################################################################
+
+# Byte-compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Python cache directories
+__pycache__/
+.python-version
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Package distribution directories
+*.egg-info/
+*.egg
+
+# pytest cache
+.pytest_cache/
+
+###############################################################################
+# 🔧 DEVELOPMENT AND EDITOR FILES
+###############################################################################
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+temp/
+
+###############################################################################
+# 📁 PROJECT SPECIFIC IGNORES
+###############################################################################
+
+# Client output and generated files
+output/
+results/
+captures/
+
+# Documentation builds
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Test output and coverage reports
+.coverage
+htmlcov/
+.pytest_cache/
+
+###############################################################################
+# 🎯 OPERATIONAL SECURITY IGNORES
+###############################################################################
+
+# Backup files created during operations
+*.bak
+*.backup
+*.old
+
+# Temporary operational files
+*.tmp
+*.cache
+
+# Package lock files (security consideration)
+package-lock.json
+yarn.lock
+
+###############################################################################
+# 📝 DOCUMENTATION AND NOTES
+###############################################################################
+
+# Local documentation files (should use official docs)
+NOTES.md
+TODO.md
+IDEAS.md
+
+# Personal developer notes
+*.note
+*.notes
+
+###############################################################################
+# ⚠️ SECURITY WARNING AND BEST PRACTICES
+###############################################################################
+
+# ALWAYS verify what you're committing:
+# git status --ignored
+# git check-ignore -v <file>
+#
+# Remember: Once sensitive data is committed, it remains in git history.
+# Use git filter-repo to remove accidentally committed secrets.
+#
+# Recommended pre-commit hook:
+# https://pre-commit.com/ for secret scanning
+
+###############################################################################
+# 🚨 LEGAL AND ETHICAL CONSIDERATIONS
+###############################################################################
+
+# This framework is for AUTHORIZED security testing only.
+# Never use without explicit written permission.
+# Educational and research purposes in controlled environments.
+#
+# By using this software, you agree to use it responsibly and legally.
+# The authors assume no liability for misuse.
+
+# End of .gitignore

@@ -1,0 +1,12 @@
+cryptography>=41.0.0
+pyOpenSSL>=23.2.0
+requests>=2.31.0
+urllib3>=2.0.0
+colorama>=0.4.0
+pyfiglet>=0.8.post1
+
+# Per sviluppo e testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.3.0
+flake8>=6.0.0
